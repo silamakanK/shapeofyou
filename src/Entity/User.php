@@ -2,12 +2,6 @@
 
 namespace App\Entity;
 
-use App\Repository\UserRepository;
-use Doctrine\ORM\Mapping as ORM;
-
-#[ORM\Entity(repositoryClass: UserRepository::class)]
-#[ORM\Table(name: '`user`')]
-class User
 use App\Enum\GenderStatus;
 use App\Enum\HeightStatus;
 use App\Enum\MorphologyStatus;
@@ -21,15 +15,12 @@ use Symfony\Component\Security\Core\User\UserInterface;
 #[ORM\Table(name: '`user`')]
 #[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_EMAIL', fields: ['email'])]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
->>>>>>> 7378a215ffc285d0724c5d5380bb4cc812759ef7
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
-<<<<<<< HEAD
-=======
     #[ORM\Column(length: 180)]
     private ?string $email = null;
 
@@ -66,13 +57,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $profil_picture = null;
 
->>>>>>> 7378a215ffc285d0724c5d5380bb4cc812759ef7
     public function getId(): ?int
     {
         return $this->id;
     }
-<<<<<<< HEAD
-=======
 
     public function getEmail(): ?string
     {
@@ -227,5 +215,4 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
->>>>>>> 7378a215ffc285d0724c5d5380bb4cc812759ef7
 }
